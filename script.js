@@ -22,7 +22,8 @@ GM_addStyle(".alert-info{width:100%;padding:12px 16px;border-radius:4px;border-s
     var days_Diff = time_diff / (1000 * 3600 * 24);
     var numberMonth = Math.floor(days_Diff/30);
 
-    window.addEventListener("load", () => {
+    window.addEventListener("load", async () => {
+        await new Promise((res) => setTimeout(res, 1000));
         var alertBox = document.createElement ('div');
 
         alertBox.innerHTML = '<h2 class="alert-info"> Bonne nouvelle ! il ne reste plus que : ' + Math.round(days_Diff) + ' jours à l\'ETNA <br> Soit ' + Math.floor(days_Diff/30) + ' mois et ' + Math.floor(days_Diff % 30) + ' jours </h2>';
